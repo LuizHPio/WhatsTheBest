@@ -4,8 +4,7 @@ Esse é um projeto feito com o framework [Next.js](https://nextjs.org/), documen
 
 ### Documentações da API são servidas em:
 
-API interna: [localhost:3000/api-docs](http://localhost:3000/api-docs)
-API externa: TBD
+API interna: https://luizhpio.github.io/WhatsTheBest/
 
 ## Getting Started
 
