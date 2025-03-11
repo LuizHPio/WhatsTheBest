@@ -1,0 +1,72 @@
+.overlay-element {
+  padding: 10px;
+  text-align: center;
+  left: 50%;
+  border-radius: 0.75rem;
+  font-size: 30px;
+}
+
+.block-item {
+  cursor: pointer;
+  padding: 8px;
+  border-width: 4px;
+  border-radius: 0.375rem;
+  margin-block: 4px;
+}
+
+.block-item-close {
+  cursor: pointer;
+  padding: 8px;
+  border-width: 4px;
+  border-radius: 0.375rem;
+  margin-block: 4px;
+}
+
+:hover.block-item-close {
+  background-color: rgb(160, 0, 0);
+  transition: ease-out 200ms;
+}
+
+:hover.block-item {
+  background-color: rgb(50, 160, 50);
+  transition: ease-out 200ms;
+}
+
+.hidden-div {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.visible-div {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.visible-div-menu {
+  translate: 0 0;
+  opacity: 100;
+  transition: opacity 1s ease-in-out, translate 0.5s ease-in-out;
+}
+
+:hover.visible-div-menu {
+  background-color: black;
+  transition: background-color 0.3s ease-in-out;
+}
+
+@media all and (orientation: landscape) {
+  .hidden-div-menu {
+    translate: 0 200%;
+    color: rgb(0, 0, 0, 0);
+    opacity: 0;
+    transition: opacity 1s ease-in-out, translate 0.5s ease-in-out,
+      color 0.2s ease-in-out;
+  }
+}
+@media all and (orientation: portrait) {
+  .hidden-div-menu {
+    color: rgb(0, 0, 0, 0);
+    opacity: 0;
+    transition: opacity 1s ease-in-out, color 0.2s ease-in-out;
+  }
+}
