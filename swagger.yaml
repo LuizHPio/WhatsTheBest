@@ -1,0 +1,143 @@
+openapi: 3.0.3
+info:
+  title: Whats the best Internal API - OpenAPI 3.0
+  description: |-
+    Essa é a documentação da API interna do Whats the best, baseada na especificação OpenAPI 3.0.
+
+  version: 0.0.1
+externalDocs:
+  description: Descubra mais sobre o swagger
+  url: http://swagger.io
+servers:
+  - url: /api/v3
+tags:
+  - name: duel
+    description: Receiving and making duels
+  - name: ranking
+    description: Receiving data about the ranking
+paths:
+  /duel:
+    get:
+      tags:
+        - duel
+      summary: Start a duel
+      description: You'll get the image and the id of the duelists
+      operationId: startDuel
+      responses:
+        "200":
+          description: Successfully obtained the dual
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  theme:
+                    type: string
+                    example: mais bonito
+                  duelId:
+                    type: integer
+                    example: 45
+                  person1Id:
+                    type: integer
+                    example: 1
+                  person2Id:
+                    type: integer
+                    example: 2
+                  image1b64:
+                    type: string
+                    example: "/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAKAAoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9PfFv/BWH4BeENH+NOmeNvj1/wqXxN4T1XVNKvNH8Tvp2m+JPDX2a1SOO50mwmgeS/t7iNU1C0kaK8+0G9CgMALWL6f8AhP4//wCFr/Czwz4p/sXxB4b/AOEk0q11X+yNds/seq6V58KS/ZruDLeVcR7tkkeTtdWGTjNdBRQB/9k="
+                    description: The raw data of the image of the first person encoded in base64
+                  image2b64:
+                    type: string
+                    example: "/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAKAAoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9PfFv/BWH4BeENH+NOmeNvj1/wqXxN4T1XVNKvNH8Tvp2m+JPDX2a1SOO50mwmgeS/t7iNU1C0kaK8+0G9CgMALWL6f8AhP4//wCFr/Czwz4p/sXxB4b/AOEk0q11X+yNds/seq6V58KS/ZruDLeVcR7tkkeTtdWGTjNdBRQB/9k=m"
+                    description: The raw data of the image of the second person encoded in base64
+                required:
+                  - theme
+                  - duelId
+                  - person1Id
+                  - person2Id
+                  - image1b64
+                  - image2b64
+        "500":
+          description: Internal server error
+  /duel/pickWinner:
+    post:
+      tags:
+        - duel
+      summary: Pick the winner of a duel
+      description: You'll need to send the id of the duel, the winner and the loser.
+      operationId: pickWinner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                duelId:
+                  type: integer
+                  example: 45
+                winnerId:
+                  type: integer
+                  example: 1
+                loserId:
+                  type: integer
+                  example: 2
+              required:
+                - duelId
+                - winnerId
+                - loserId
+      responses:
+        "200":
+          description: Successfully picked the winner
+        "400":
+          description: Invalid ID supplied for duel
+        "500":
+          description: Internal server error
+  /ranking:
+    get:
+      tags:
+        - ranking
+      summary: Get the ranking
+      description: You'll get the all the info of the leaderboard
+      operationId: getRanking
+      responses:
+        "200":
+          description: List of things in the ranking
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    id:
+                      type: integer
+                    image:
+                      type: string
+                      description: The raw data of the image of the thing encoded in base64
+                    points:
+                      type: number
+                  required:
+                    - name
+                    - id
+                    - image
+                    - points
+        "500":
+          description: Internal server error
+
+components:
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
