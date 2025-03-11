@@ -1,4 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## O que é isso?
+
+Esse é um projeto feito com o framework [Next.js](https://nextjs.org/), documentação escrita usando o [Swagger](https://swagger.io/) na especificação OpenAPI 3.0, Tailwind CSS e Vitest para a criação dos testes.
+
+### Documentações da API são servidas em:
+
+API interna: [localhost:3000/api-docs](http://localhost:3000/api-docs)
+API externa: TBD
 
 ## Getting Started
 
